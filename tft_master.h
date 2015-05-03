@@ -4,6 +4,7 @@
  */
 
 #include "bsp.h"
+#include "delays.h"
 
 #define _dc         	P5 // this is the pin of the header, not on MSP
 #define _dc_output()	{P5_dir |= P5_bit;}
@@ -123,9 +124,9 @@ void tft_setAddrWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 void tft_pushColor(uint16_t color);
 void tft_drawPixel(int16_t x, int16_t y, uint16_t color);
 void tft_drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
-void tft_drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
+//void tft_drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
 void tft_fillScreen(uint16_t color);
-void tft_fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+//void tft_fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
 uint16_t tft_Color565(uint8_t r, uint8_t g, uint8_t b);
 void tft_setRotation(uint8_t m);
 uint8_t tft_spiread(void);
@@ -134,5 +135,4 @@ uint8_t tft_readcommand8(uint8_t c);
 
 uint16_t _width, _height;
 
-void delay_ms(uint16_t);
-void delay_us(uint16_t);
+

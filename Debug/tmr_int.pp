@@ -19,6 +19,7 @@ tmr_int.obj: ../bsp.h
 tmr_int.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
 tmr_int.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h
 tmr_int.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
+tmr_int.obj: ../delays.h
 tmr_int.obj: ../tft_gfx.h
 tmr_int.obj: ../bsp.h
 tmr_int.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
@@ -53,6 +54,7 @@ c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h:
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h: 
+../delays.h: 
 ../tft_gfx.h: 
 ../bsp.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 

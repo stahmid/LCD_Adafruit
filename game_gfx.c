@@ -185,7 +185,6 @@ void get_pokemon(uint16_t pokemon_number, uint8_t side){
 	uint16_t z = 0;
 	uint16_t l = 0;
 
-	P1OUT &= ~BIT0;
 	if (side == SIDE_SELF){
 		y = bmp_header.height+1;
 		l = ILI9340_TFTWIDTH-2-bmp_header.width;

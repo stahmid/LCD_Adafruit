@@ -8,6 +8,7 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/msp430_4.3.3
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
+"./delays.obj" \
 "./flags.obj" \
 "./game_gfx.obj" \
 "./glcdfont.obj" \
@@ -18,6 +19,7 @@ $(GEN_CMDS__FLAG) \
 "./tft_gfx.obj" \
 "./tft_master.obj" \
 "./tmr_int.obj" \
+"./touchlib.obj" \
 "./usci_spi.obj" \
 "../lnk_msp430f2274.cmd" \
 -l"libc.a" \
@@ -150,8 +152,8 @@ LCD_Adafruit.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "flags.pp" "game_gfx.pp" "glcdfont.pp" "main.pp" "mmc.pp" "pff.pp" "setup.pp" "tft_gfx.pp" "tft_master.pp" "tmr_int.pp" "usci_spi.pp" 
-	-$(RM) "flags.obj" "game_gfx.obj" "glcdfont.obj" "main.obj" "mmc.obj" "pff.obj" "setup.obj" "tft_gfx.obj" "tft_master.obj" "tmr_int.obj" "usci_spi.obj" 
+	-$(RM) "delays.pp" "flags.pp" "game_gfx.pp" "glcdfont.pp" "main.pp" "mmc.pp" "pff.pp" "setup.pp" "tft_gfx.pp" "tft_master.pp" "tmr_int.pp" "touchlib.pp" "usci_spi.pp" 
+	-$(RM) "delays.obj" "flags.obj" "game_gfx.obj" "glcdfont.obj" "main.obj" "mmc.obj" "pff.obj" "setup.obj" "tft_gfx.obj" "tft_master.obj" "tmr_int.obj" "touchlib.obj" "usci_spi.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

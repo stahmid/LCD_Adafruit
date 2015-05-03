@@ -7,6 +7,7 @@ CMD_SRCS += \
 ../lnk_msp430f2274.cmd 
 
 C_SRCS += \
+../delays.c \
 ../flags.c \
 ../game_gfx.c \
 ../glcdfont.c \
@@ -17,9 +18,11 @@ C_SRCS += \
 ../tft_gfx.c \
 ../tft_master.c \
 ../tmr_int.c \
+../touchlib.c \
 ../usci_spi.c 
 
 OBJS += \
+./delays.obj \
 ./flags.obj \
 ./game_gfx.obj \
 ./glcdfont.obj \
@@ -30,9 +33,11 @@ OBJS += \
 ./tft_gfx.obj \
 ./tft_master.obj \
 ./tmr_int.obj \
+./touchlib.obj \
 ./usci_spi.obj 
 
 C_DEPS += \
+./delays.pp \
 ./flags.pp \
 ./game_gfx.pp \
 ./glcdfont.pp \
@@ -43,9 +48,11 @@ C_DEPS += \
 ./tft_gfx.pp \
 ./tft_master.pp \
 ./tmr_int.pp \
+./touchlib.pp \
 ./usci_spi.pp 
 
 C_DEPS__QUOTED += \
+"delays.pp" \
 "flags.pp" \
 "game_gfx.pp" \
 "glcdfont.pp" \
@@ -56,9 +63,11 @@ C_DEPS__QUOTED += \
 "tft_gfx.pp" \
 "tft_master.pp" \
 "tmr_int.pp" \
+"touchlib.pp" \
 "usci_spi.pp" 
 
 OBJS__QUOTED += \
+"delays.obj" \
 "flags.obj" \
 "game_gfx.obj" \
 "glcdfont.obj" \
@@ -69,9 +78,11 @@ OBJS__QUOTED += \
 "tft_gfx.obj" \
 "tft_master.obj" \
 "tmr_int.obj" \
+"touchlib.obj" \
 "usci_spi.obj" 
 
 C_SRCS__QUOTED += \
+"../delays.c" \
 "../flags.c" \
 "../game_gfx.c" \
 "../glcdfont.c" \
@@ -82,6 +93,7 @@ C_SRCS__QUOTED += \
 "../tft_gfx.c" \
 "../tft_master.c" \
 "../tmr_int.c" \
+"../touchlib.c" \
 "../usci_spi.c" 
 
 

@@ -29,25 +29,22 @@ void main(void) {
 	setup_lcd_fs();
 	setup_timer_buttons();
 
+	init_touch_adc();
+
 // get image here
-    get_pokemon(3, SIDE_OPPOSITION);
-    get_pokemon(8, SIDE_SELF);
+    get_pokemon(24, SIDE_OPPOSITION);
+    get_pokemon(18, SIDE_SELF);
     draw_borders();
 
     draw_health(48, 75);
-    draw_names("Martinez", "Rana");
+    draw_names("Pidgeot", "Arbok");
 
-    message_write("Martinez used \"Spaghetti\"", 1);
-    message_write("Rana used \"Stick of Honor\"", 2);
-    message_write("Martinez used \"Round Robin\"", 3);
-    message_write("Rana used \"Phase Margin\"", 4);
+    message_write("Pidgeot used \"Wing Attack\"", 1);
+    message_write("Arbok used \"Wrap\"", 2);
+    message_write("Pidgeot used \"Sand Attack\"", 3);
+    message_write("Arbok used \"Ice Fang\"", 4);
 
-//    setup_timer_buttons();
     updateButtons();
-
-    get_pokemon(25, SIDE_OPPOSITION);
-    get_pokemon(19, SIDE_SELF);
-    draw_borders();
 
     while(1){
     	if (getFlag(flgupdateButton)){

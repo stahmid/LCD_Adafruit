@@ -14,6 +14,7 @@ game_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdarg.h
 game_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h
 game_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdint.h
 game_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
+game_gfx.obj: ../delays.h
 game_gfx.obj: ../tft_gfx.h
 game_gfx.obj: ../bsp.h
 game_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
@@ -40,6 +41,7 @@ c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdarg.h:
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdint.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h: 
+../delays.h: 
 ../tft_gfx.h: 
 ../bsp.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 

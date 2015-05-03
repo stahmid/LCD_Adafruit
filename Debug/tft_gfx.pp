@@ -19,6 +19,7 @@ tft_gfx.obj: ../bsp.h
 tft_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
 tft_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h
 tft_gfx.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
+tft_gfx.obj: ../delays.h
 
 ../tft_gfx.c: 
 ../tft_gfx.h: 
@@ -39,3 +40,4 @@ c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h:
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h: 
+../delays.h: 

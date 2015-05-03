@@ -21,6 +21,8 @@
 #include "diskio.h"
 #include "pff.h"
 
+#include "touchlib.h"
+
 FATFS fs; /* File system object */
 char buffer[30];
 FRESULT pres;
@@ -28,5 +30,6 @@ DRESULT dres;
 
 void setup_lcd_fs(void);
 void setup_timer_buttons(void);
+void init_touch_adc(void);
 
 #endif /* SETUP_H_ */

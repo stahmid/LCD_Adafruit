@@ -110,6 +110,33 @@
 #define P17_sel2	P3SEL2
 #define P18_sel2	P3SEL2
 
+#define P3_ren		P2REN
+#define P4_ren		P2REN
+#define P5_ren		P2REN
+#define P6_ren		P2REN
+#define P7_ren		P2REN
+#define P8_ren		P4REN
+#define P9_ren		P4REN
+#define P10_ren		P4REN
+#define P11_ren		P4REN
+#define P13_ren		P2REN
+#define P14_ren		P2REN
+#define P15_ren		P3REN
+#define P16_ren		P3REN
+#define P17_ren		P3REN
+#define P18_ren		P3REN
+
+#define P3_adc_ch	0
+#define P4_adc_ch	1
+#define P5_adc_ch	2
+#define P6_adc_ch	3
+#define P7_adc_ch	4
+#define P8_adc_ch	12
+#define P9_adc_ch	13
+#define P10_adc_ch	14
+#define P11_adc_ch	15
+
+
 #define MOSI_out	P18_out
 #define MOSI_in		P18_in
 #define MOSI_dir	P18_dir

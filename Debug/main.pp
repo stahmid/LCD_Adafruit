@@ -22,6 +22,7 @@ main.obj: ../bsp.h
 main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
 main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h
 main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
+main.obj: ../delays.h
 main.obj: ../tft_gfx.h
 main.obj: ../bsp.h
 main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
@@ -60,6 +61,16 @@ main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
 main.obj: ../diskio.h
 main.obj: ../integer.h
 main.obj: ../pff.h
+main.obj: ../touchlib.h
+main.obj: ../bsp.h
+main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
+main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h
+main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
+main.obj: ../tft_master.h
+main.obj: ../bsp.h
+main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h
+main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h
+main.obj: c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h
 
 ../main.c: 
 ../bsp.h: 
@@ -83,6 +94,7 @@ c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h:
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h: 
+../delays.h: 
 ../tft_gfx.h: 
 ../bsp.h: 
 c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 
@@ -121,3 +133,13 @@ c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h:
 ../diskio.h: 
 ../integer.h: 
 ../pff.h: 
+../touchlib.h: 
+../bsp.h: 
+c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 
+c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h: 
+c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h: 
+../tft_master.h: 
+../bsp.h: 
+c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdio.h: 
+c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/stdlib.h: 
+c:/ti/ccsv6/tools/compiler/msp430_4.3.3/include/string.h: 
