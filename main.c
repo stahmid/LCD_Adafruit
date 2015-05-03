@@ -39,11 +39,23 @@ void main(void) {
     draw_health(48, 75);
     draw_names("Pidgeot", "Arbok");
 
-    message_write("Pidgeot used \"Wing Attack\"", 1);
-    message_write("Arbok used \"Wrap\"", 2);
-    message_write("Pidgeot used \"Sand Attack\"", 3);
-    message_write("Arbok used \"Ice Fang\"", 4);
+//    message_write("Pidgeot used \"Wing Attack\"", 1);
+//    message_write("Arbok used \"Wrap\"", 2);
+//    message_write("Pidgeot used \"Sand Attack\"", 3);
+//    message_write("Arbok used \"Ice Fang\"", 4);
 
+    touchpoint_t tp;
+
+    while (1){
+    	ts_getPoint(&tp);
+    	sprintf(buffer, "%d",tp.tp_x);
+    	message_write(buffer, 1);
+    	sprintf(buffer, "%d", tp.tp_y);
+    	message_write(buffer, 2);
+    	sprintf(buffer, "%d", tp.tp_z);
+    	message_write(buffer, 3);
+    	delay_ms(100);
+    }
     updateButtons();
 
     while(1){

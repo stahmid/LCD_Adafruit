@@ -67,6 +67,6 @@ void init_touch_adc(void){
 	_xp_ANALOG();
 	_yp_ANALOG();
 
-	ADC10CTL1 = _xp_ADC_CH | ADC10DIV_7 | ADC10SSEL_3;
+	ADC10CTL1 = ADC10DIV_7 | ADC10SSEL_3;
 	ADC10CTL0 = ADC10SHT_3 | ADC10ON;	// setup adc
 }

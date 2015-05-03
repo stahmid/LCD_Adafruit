@@ -6,3 +6,8 @@ MISO:	P15
 MOSI:	P18
 CCS:	P8
 SCLK:	P16
+
+X+:		P10
+X-:		P14
+Y+:		P11
+Y-:		P13
