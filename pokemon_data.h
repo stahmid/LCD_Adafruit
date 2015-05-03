@@ -1,0 +1,1 @@
+// Pokemon data in ROM

@@ -1,0 +1,8 @@
+
+DC:		P5
+CS:		P6
+RST:	P7
+MISO:	P15
+MOSI:	P18
+CCS:	P8
+SCLK:	P16

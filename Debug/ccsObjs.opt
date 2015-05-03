@@ -1,0 +1,1 @@
+"./flags.obj" "./game_gfx.obj" "./glcdfont.obj" "./main.obj" "./mmc.obj" "./pff.obj" "./tft_gfx.obj" "./tft_master.obj" "./tmr_int.obj" "./usci_spi.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
