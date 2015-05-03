@@ -14,6 +14,7 @@ $(GEN_CMDS__FLAG) \
 "./main.obj" \
 "./mmc.obj" \
 "./pff.obj" \
+"./setup.obj" \
 "./tft_gfx.obj" \
 "./tft_master.obj" \
 "./tmr_int.obj" \
@@ -149,8 +150,8 @@ LCD_Adafruit.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "flags.pp" "game_gfx.pp" "glcdfont.pp" "main.pp" "mmc.pp" "pff.pp" "tft_gfx.pp" "tft_master.pp" "tmr_int.pp" "usci_spi.pp" 
-	-$(RM) "flags.obj" "game_gfx.obj" "glcdfont.obj" "main.obj" "mmc.obj" "pff.obj" "tft_gfx.obj" "tft_master.obj" "tmr_int.obj" "usci_spi.obj" 
+	-$(RM) "flags.pp" "game_gfx.pp" "glcdfont.pp" "main.pp" "mmc.pp" "pff.pp" "setup.pp" "tft_gfx.pp" "tft_master.pp" "tmr_int.pp" "usci_spi.pp" 
+	-$(RM) "flags.obj" "game_gfx.obj" "glcdfont.obj" "main.obj" "mmc.obj" "pff.obj" "setup.obj" "tft_gfx.obj" "tft_master.obj" "tmr_int.obj" "usci_spi.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

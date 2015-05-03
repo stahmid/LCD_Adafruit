@@ -13,6 +13,7 @@ C_SRCS += \
 ../main.c \
 ../mmc.c \
 ../pff.c \
+../setup.c \
 ../tft_gfx.c \
 ../tft_master.c \
 ../tmr_int.c \
@@ -25,6 +26,7 @@ OBJS += \
 ./main.obj \
 ./mmc.obj \
 ./pff.obj \
+./setup.obj \
 ./tft_gfx.obj \
 ./tft_master.obj \
 ./tmr_int.obj \
@@ -37,6 +39,7 @@ C_DEPS += \
 ./main.pp \
 ./mmc.pp \
 ./pff.pp \
+./setup.pp \
 ./tft_gfx.pp \
 ./tft_master.pp \
 ./tmr_int.pp \
@@ -49,6 +52,7 @@ C_DEPS__QUOTED += \
 "main.pp" \
 "mmc.pp" \
 "pff.pp" \
+"setup.pp" \
 "tft_gfx.pp" \
 "tft_master.pp" \
 "tmr_int.pp" \
@@ -61,6 +65,7 @@ OBJS__QUOTED += \
 "main.obj" \
 "mmc.obj" \
 "pff.obj" \
+"setup.obj" \
 "tft_gfx.obj" \
 "tft_master.obj" \
 "tmr_int.obj" \
@@ -73,6 +78,7 @@ C_SRCS__QUOTED += \
 "../main.c" \
 "../mmc.c" \
 "../pff.c" \
+"../setup.c" \
 "../tft_gfx.c" \
 "../tft_master.c" \
 "../tmr_int.c" \

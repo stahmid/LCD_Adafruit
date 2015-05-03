@@ -132,14 +132,18 @@ void get_pokemon(uint16_t pokemon_number, uint8_t side){
 	sprintf(fname, "%d.bmp\0", pokemon_number);
 
 	// Open the image file
+	_disable_interrupts();
 	fat_result = pf_open(fname);
+	_enable_interrupts();
 	if (fat_result){
 		sprintf((char*) buffer, "PFF error 2 = %d\n", (int) fat_result);
 		tft_writeString((char*) buffer);
 	}
 
 	//Read data to the memory
+	_disable_interrupts();
 	fat_result = pf_read(buffer, 54, &br);
+	_enable_interrupts();
 	if (fat_result){
 		sprintf((char*) buffer, "PFF error 3 = %d\n", (int) fat_result);
 		tft_writeString((char*) buffer);
@@ -166,6 +170,14 @@ void get_pokemon(uint16_t pokemon_number, uint8_t side){
 
 // Bitmap file opened and info retrieved - now get data from the pixel array
 
+// Clear drawing area
+	if (bmp_header.height <= IMAGE_MAXHEIGHT){
+		if (side == SIDE_SELF){
+			tft_fillRect(SCREEN_CENTER,bmp_header.height,SCREEN_CENTER,IMAGE_MAXHEIGHT-bmp_header.height,ILI9340_WHITE);
+		} else {
+			tft_fillRect(0,bmp_header.height,SCREEN_CENTER,IMAGE_MAXHEIGHT-bmp_header.height,ILI9340_WHITE);
+		}
+	}
 
 	uint16_t y = bmp_header.height + 1;
 	uint16_t p = 0;
@@ -174,7 +186,7 @@ void get_pokemon(uint16_t pokemon_number, uint8_t side){
 	uint16_t l = 0;
 
 	P1OUT &= ~BIT0;
-	if (side == 0){
+	if (side == SIDE_SELF){
 		y = bmp_header.height+1;
 		l = ILI9340_TFTWIDTH-2-bmp_header.width;
 	}
@@ -206,7 +218,15 @@ void get_pokemon(uint16_t pokemon_number, uint8_t side){
 			else{
 				rd_size = (bmp_header.row_size + rd_block) - row_count;
 			}
+/* NOTE: SUPER IMPORTANT
+ * 	- If the file system read is interrupted in between, there is a disk error.
+ * 	- Hence, it's necessary to have an atomic read of the FS without being
+ * 		interrupted. Hence, interrupts are disabled before the read and reenabled
+ * 		after.
+ */
+			_disable_interrupts();
 			pf_read(buffer, rd_size, &br);
+			_enable_interrupts();
 			// rely on division to floor value
 			z = 0;
 			for (x = 0; x < rd_size/3; x++){

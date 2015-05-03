@@ -39,7 +39,7 @@ __interrupt void ms_timer_handler (void)
 		P1IE = button_pin;						// Enable button interrupt
 	}
 
-	TBCCTL0 &=	~ CCIFG;						// Clear interrupt flag
+	TBCCTL0 = CCIE;
 }
 
 void init_button(void){

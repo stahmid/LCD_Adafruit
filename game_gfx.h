@@ -12,6 +12,9 @@
 #include "tft_gfx.h"
 #include "bsp.h"
 
+#define SIDE_OPPOSITION			1
+#define SIDE_SELF				0
+
 #define MAX_MSG_LINES			4
 #define MSG_CLEARANCE			5
 #define MSG_HEIGHT				(textsize*8)
