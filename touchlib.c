@@ -18,6 +18,7 @@ uint16_t findmedian(uint16_t* x){
 
 uint16_t ts_readX(void){
 	uint16_t ad_res;
+	uint8_t i;
 
 	_ym_OUTPUT(); _ym_DIGITAL(); _ym_LOW();
 	delay_ms(1);
@@ -27,7 +28,11 @@ uint16_t ts_readX(void){
 	_xm_OUTPUT(); _xm_DIGITAL(); _xm_LOW();
 	delay_ms(1);
 
-	ad_res = analogRead_touch(_yp_ADC_CH);
+	ad_res = 0;
+	for (i=0; i<8; i++)
+		ad_res += analogRead_touch(_yp_ADC_CH);
+
+	ad_res >>= 3;
 	_ym_OUTPUT(); _ym_DIGITAL(); _ym_LOW(); delay_ms(1);
 
 	return ad_res;

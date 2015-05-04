@@ -10,8 +10,8 @@
 #include "diskio.h"
 #include "pff.h"
 
-pokemon_t get_pokemon_data(char file_number) {
-	pokemon_t pk1;
+pokemon_data_t get_pokemon_data(char file_number) {
+	pokemon_data_t pk1;
     UINT br;
     BYTE buff[20];
 	FRESULT res;
@@ -54,21 +54,71 @@ pokemon_t get_pokemon_data(char file_number) {
     char* speed = parsedata(buff, name);
     pk1.speed = atoi(speed);
 
+    return pk1;
+}
+
+pokemon_team_t get_pokemon_team(char file_number) {
+	pokemon_team_t pk1;
+    UINT br;
+    BYTE buff[20];
+	FRESULT res;
+
+	int16_t attack;
+
+	sprintf((char*) buff, "%d.txt", file_number);
+	// Open a file
+    res = pf_open(buff);
+
+    res = pf_read(buff, 20, &br);   //Read first line of text file, getting Pokemon, forget about data
+
+    pk1.id = (char) file_number;
+
+    res = pf_read(buff, 20, &br);	//Read next line, Type1
+//    char* type1 = parsedata(buff, name);
+
+    res = pf_read(buff, 20, &br);	//Read next line, Type2
+//    char* type2 = parsedata(buff, name);
+
+    res = pf_read(buff, 20, &br);	//Read next line, hp
+    parsedata(buff, name);
+    pk1.hp_left = atoi(name);
+    pk1.hp_max = atoi(name);
+
+    res = pf_read(buff, 20, &br);	//Read next line, attack
+//    char* attack = parsedata(buff, name);
+//    pk1.attack = atoi(attack);
+
+    res = pf_read(buff, 20, &br);	//Read next line, defense
+//    char* defense = parsedata(buff, name);
+//    pk1.defense = atoi(defense);
+
+    res = pf_read(buff, 20, &br);	//Read next line, special attack
+//    char* sa = parsedata(buff, name);
+//    pk1.spattack = atoi(sa);
+
+    res = pf_read(buff, 20, &br);	//Read next line, special defense
+//    char* sd = parsedata(buff, name);
+//    pk1.spdefense = atoi(sd);
+
+    res = pf_read(buff, 20, &br);	//Read next line, speed
+    parsedata(buff, name);
+    pk1.speed = atoi(name);
+
     res = pf_read(buff, 20, &br);   //1st attack
-    char* att1 = parsedata(buff, name);
-    pk1.attackOne = atoi(att1);
+    parsedata(buff, name);
+    pk1.attackOne = atoi(name);
 
     res = pf_read(buff, 20, &br);   //2nd attack
-    char* att2 = parsedata(buff, name);
-    pk1.attackTwo = atoi(att2);
+    parsedata(buff, name);
+    pk1.attackTwo = atoi(name);
 
     res = pf_read(buff, 20, &br);   //3rd attack
-    char* att3 = parsedata(buff, name);
-    pk1.attackThree = atoi(att3);
+    parsedata(buff, name);
+    pk1.attackThree = atoi(name);
 
     res = pf_read(buff, 20, &br);   //4th attack
-    char* att4 = parsedata(buff, name);
-    pk1.attackFour = atoi(att4);
+    parsedata(buff, name);
+    pk1.attackFour = atoi(name);
 
     return pk1;
 }

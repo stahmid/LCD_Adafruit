@@ -14,7 +14,8 @@ void main(void) {
 
 	//	init_touch_adc();
 
-	pokemon_t pokemon_opposition, pokemon_self;
+	pokemon_data_t pokemon_opposition, pokemon_self;
+	pokemon_team_t pkt_opposition, pkt_self;
 
 	for (pk_opposition=1; pk_opposition<=26; pk_opposition++) {
 		pokemon_opposition = get_pokemon_data(pk_opposition);
@@ -25,13 +26,15 @@ void main(void) {
 		get_pokemon_image(pk_self, SIDE_SELF);
 		draw_borders();
 
-		get_attack_Name(pokemon_opposition.attackOne, attack1);
+		pkt_opposition = get_pokemon_team(pk_opposition);
+
+		get_attack_Name(pkt_opposition.attackOne, attack1);
 		set_button1_text(attack1);
-		get_attack_Name(pokemon_opposition.attackTwo, attack2);
+		get_attack_Name(pkt_opposition.attackTwo, attack2);
 		set_button2_text(attack2);
-		get_attack_Name(pokemon_opposition.attackThree, attack3);
+		get_attack_Name(pkt_opposition.attackThree, attack3);
 		set_button3_text(attack3);
-		get_attack_Name(pokemon_opposition.attackFour, attack4);
+		get_attack_Name(pkt_opposition.attackFour, attack4);
 		set_button4_text(attack4);
 
 		draw_health(100, 100);

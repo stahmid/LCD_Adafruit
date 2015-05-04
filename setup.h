@@ -24,6 +24,9 @@
 //#include "touchlib.h"
 #include "parser.h"
 
+pokemon_team_t pkmnt1;
+pokemon_data_t pkmnd1;
+
 FATFS fs; /* File system object */
 char buffer[30];
 FRESULT pres;
