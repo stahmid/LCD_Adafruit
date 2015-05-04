@@ -1,0 +1,1 @@
+"./main.obj" "./mmc.obj" "./parser.obj" "./pff.obj" "./radio.obj" "./radio_methods.obj" "./usci_spi.obj" "./mrfi/mrfi.obj" "./bsp/bsp.obj" "../lnk_msp430f2274.cmd" -l"rts430.lib" 
