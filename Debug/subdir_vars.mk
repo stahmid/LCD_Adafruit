@@ -13,6 +13,7 @@ C_SRCS += \
 ../glcdfont.c \
 ../main.c \
 ../mmc.c \
+../parser.c \
 ../pff.c \
 ../setup.c \
 ../tft_gfx.c \
@@ -28,6 +29,7 @@ OBJS += \
 ./glcdfont.obj \
 ./main.obj \
 ./mmc.obj \
+./parser.obj \
 ./pff.obj \
 ./setup.obj \
 ./tft_gfx.obj \
@@ -43,6 +45,7 @@ C_DEPS += \
 ./glcdfont.pp \
 ./main.pp \
 ./mmc.pp \
+./parser.pp \
 ./pff.pp \
 ./setup.pp \
 ./tft_gfx.pp \
@@ -58,6 +61,7 @@ C_DEPS__QUOTED += \
 "glcdfont.pp" \
 "main.pp" \
 "mmc.pp" \
+"parser.pp" \
 "pff.pp" \
 "setup.pp" \
 "tft_gfx.pp" \
@@ -73,6 +77,7 @@ OBJS__QUOTED += \
 "glcdfont.obj" \
 "main.obj" \
 "mmc.obj" \
+"parser.obj" \
 "pff.obj" \
 "setup.obj" \
 "tft_gfx.obj" \
@@ -88,6 +93,7 @@ C_SRCS__QUOTED += \
 "../glcdfont.c" \
 "../main.c" \
 "../mmc.c" \
+"../parser.c" \
 "../pff.c" \
 "../setup.c" \
 "../tft_gfx.c" \

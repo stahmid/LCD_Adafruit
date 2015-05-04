@@ -21,7 +21,8 @@
 #include "diskio.h"
 #include "pff.h"
 
-#include "touchlib.h"
+//#include "touchlib.h"
+#include "parser.h"
 
 FATFS fs; /* File system object */
 char buffer[30];

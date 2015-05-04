@@ -6,6 +6,7 @@
 const uint16_t MSG_COLOR[] = {0x0000, 0x3186, 0x632C, 0x94B2};
 
 void initButtons(void){
+
 	btn1.selected = 1;
 	btn2.selected = 0;
 	btn3.selected = 0;
@@ -21,12 +22,30 @@ void initButtons(void){
 	btn3.y_tc = ILI9340_TFTHEIGHT-h_btn-btn_clearance;
 	btn4.y_tc = ILI9340_TFTHEIGHT-h_btn-btn_clearance;
 
-	btn1.text = "Tackle";
-	btn2.text = "Ember";
-	btn3.text = "Scratch";
-	btn4.text = "Growl";
-
 	activeButton = 1;
+}
+
+void set_button1_text(char* text){
+	btn1.text = text;
+}
+
+void set_button2_text(char* text){
+	btn2.text = text;
+}
+
+void set_button3_text(char* text){
+	btn3.text = text;
+}
+
+void set_button4_text(char* text){
+	btn4.text = text;
+}
+
+void set_buttons_text(char* text1, char* text2, char* text3, char* text4){
+	btn1.text = text1;
+	btn2.text = text2;
+	btn3.text = text3;
+	btn4.text = text4;
 }
 
 void drawButton(btnAttack_t* btn){
@@ -58,12 +77,13 @@ void drawButton(btnAttack_t* btn){
 		text_length++;
 		btn->text++;
 	}
+
 	text_length *= 5; // 7x5 blocks
 
 	// reset pointer
 	btn->text = init_pointer;
 
-	tft_setCursor(btn->x_tc+w_btn/2-text_length/2, btn->y_tc+h_btn/2);
+	tft_setCursor(btn->x_tc+(w_btn>>1)-(text_length>>1), btn->y_tc+(h_btn>>1));
 
 	// draw text
 	tft_writeString(btn->text);
@@ -100,7 +120,7 @@ void updateButtons(void){
 
 }
 
-void get_pokemon(uint16_t pokemon_number, uint8_t side){
+void get_pokemon_image(uint16_t pokemon_number, uint8_t side){
 	/*
 	 * pokemon_number: assigned number of pokemon that identies it
 	 * side: 	which side - opposition or player
@@ -248,10 +268,12 @@ void draw_names(char* name_self, char* name_opponent){
 	tft_setTextColor(ILI9340_BLACK);
 	tft_setTextSize(1);
 
+	tft_fillRect(HEALTH_BAR_LEFT_OFFSET, NAME_Y, 80, 10, ILI9340_WHITE);
 	tft_setCursor(HEALTH_BAR_LEFT_OFFSET, NAME_Y);
 	pokemon_name = (char*) name_opponent;
 	tft_writeString(pokemon_name);
 
+	tft_fillRect(SCREEN_CENTER+HEALTH_BAR_LEFT_OFFSET, NAME_Y, 80, 10, ILI9340_WHITE);
 	tft_setCursor(SCREEN_CENTER+HEALTH_BAR_LEFT_OFFSET, NAME_Y);
 	pokemon_name = (char*) name_self;
 	tft_writeString(pokemon_name);

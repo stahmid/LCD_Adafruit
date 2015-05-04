@@ -31,16 +31,16 @@
 
 #define BORDER_HEIGHT			(HEALTH_BAR_Y+HEALTH_BAR_HEIGHT+10)
 
-#define h_btn			25
-#define w				ILI9340_TFTWIDTH
-#define	w_btn			w/2
-#define r_btn			10	// radius for rounding rectangle
+#define h_btn					25
+#define w						ILI9340_TFTWIDTH
+#define	w_btn					w/2
+#define r_btn					10	// radius for rounding rectangle
 
-#define	btn_clearance 	20 // clearance off the bottom of the screen
-#define s_color 		ILI9340_BLACK	// background color for filling
-#define s_tcolor		ILI9340_WHITE	// text color when selected
-#define ns_color 		ILI9340_WHITE	// background color for filling
-#define ns_tcolor		ILI9340_BLACK	// text color when not selected
+#define	btn_clearance 			20 // clearance off the bottom of the screen
+#define s_color 				ILI9340_BLACK	// background color for filling
+#define s_tcolor				ILI9340_WHITE	// text color when selected
+#define ns_color		 		ILI9340_WHITE	// background color for filling
+#define ns_tcolor				ILI9340_BLACK	// text color when not selected
 
 typedef struct attack_button{
 	uint16_t x_tc; // x coordinates of top left corner
@@ -55,6 +55,7 @@ volatile uint8_t activeButton;
 
 void initButtons(void);
 void drawButton(btnAttack_t* btn);
+void set_buttons_text(char* text1, char* text2, char* text3, char* text4);
 void updateButtons(void);
 
 volatile uint8_t flgupdateButton;
@@ -76,9 +77,14 @@ struct bitmap_header{
 } bmp_header;
 
 
-void get_pokemon(uint16_t pokemon_number, uint8_t side);
+void get_pokemon_image(uint16_t pokemon_number, uint8_t side);
 void draw_borders(void);
 void draw_health(uint8_t health_self, uint8_t health_opponent);
+
+void set_button1_text(char* text);
+void set_button2_text(char* text);
+void set_button3_text(char* text);
+void set_button4_text(char* text);
 
 #define MESSAGE_Y
 void message_write(char* msg, uint8_t msg_line);

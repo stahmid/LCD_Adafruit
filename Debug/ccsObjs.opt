@@ -1,1 +1,1 @@
-"./delays.obj" "./flags.obj" "./game_gfx.obj" "./glcdfont.obj" "./main.obj" "./mmc.obj" "./pff.obj" "./setup.obj" "./tft_gfx.obj" "./tft_master.obj" "./tmr_int.obj" "./touchlib.obj" "./usci_spi.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
+"./delays.obj" "./flags.obj" "./game_gfx.obj" "./glcdfont.obj" "./main.obj" "./mmc.obj" "./parser.obj" "./pff.obj" "./setup.obj" "./tft_gfx.obj" "./tft_master.obj" "./tmr_int.obj" "./touchlib.obj" "./usci_spi.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 
