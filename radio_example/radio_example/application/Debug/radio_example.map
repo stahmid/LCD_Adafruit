@@ -1,0 +1,865 @@
+******************************************************************************
+                  MSP430 Linker PC v4.3.3                      
+******************************************************************************
+>> Linked Mon May 04 05:45:37 2015
+
+OUTPUT FILE NAME:   <radio_example.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000ad7e
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000400  000000f3  0000030d  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 00008000   00007fde  0000346b  00004b73  RWIX
+  INT00                 0000ffe0   00000002  00000002  00000000  RWIX
+  INT01                 0000ffe2   00000002  00000002  00000000  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000002  00000000  RWIX
+  INT04                 0000ffe8   00000002  00000002  00000000  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000002  00000000  RWIX
+  INT12                 0000fff8   00000002  00000002  00000000  RWIX
+  INT13                 0000fffa   00000002  00000002  00000000  RWIX
+  INT14                 0000fffc   00000002  00000002  00000000  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    00008000    00000000     UNINITIALIZED
+
+.bss       0    00000200    000000a3     UNINITIALIZED
+                  00000200    0000003e     parser.obj (.bss)
+                  0000023e    0000002e     mrfi.obj (.bss)
+                  0000026c    0000002c     main.obj (.bss)
+                  00000298    00000004     rts430.lib : _lock.obj (.bss)
+                  0000029c    00000004                : boot.obj (.bss)
+                  000002a0    00000002     pff.obj (.bss)
+                  000002a2    00000001     mmc.obj (.bss)
+
+.stack     0    000005b0    00000050     UNINITIALIZED
+                  000005b0    00000002     rts430.lib : boot.obj (.stack)
+                  000005b2    0000004e     --HOLE--
+
+.text      0    00008000    000030b8     
+                  00008000    00000300     pff.obj (.text:pf_mount)
+                  00008300    000002a0     parser.obj (.text:get_pokemon_team)
+                  000085a0    00000294     parser.obj (.text:get_pokemon_data)
+                  00008834    000001fe     mrfi.obj (.text:MRFI_Init)
+                  00008a32    000001bc     pff.obj (.text:pf_read)
+                  00008bee    00000198     mmc.obj (.text:disk_initialize)
+                  00008d86    0000014e     main.obj (.text:process_game)
+                  00008ed4    00000130     rts430.lib : fs_add.obj (.text)
+                  00009004    0000012c     radio.obj (.text:MRFI_RxCompleteISR)
+                  00009130    0000011c     mrfi.obj (.text:MRFI_Transmit)
+                  0000924c    00000116     rts430.lib : _printfi_min.obj (.text:_setfield)
+                  00009362    000000f8     main.obj (.text:calculateDamage)
+                  0000945a    000000ee     pff.obj (.text:get_fat)
+                  00009548    000000ec     parser.obj (.text:get_attacks)
+                  00009634    000000ea     mrfi.obj (.text:Mrfi_SyncPinRxIsr)
+                  0000971e    000000ea     pff.obj (.text:create_name)
+                  00009808    000000ea     pff.obj (.text:dir_next)
+                  000098f2    000000e2     pff.obj (.text:follow_path)
+                  000099d4    000000ce     pff.obj (.text:pf_open)
+                  00009aa2    000000ca     rts430.lib : _printfi_min.obj (.text:__TI_printfi_minimal)
+                  00009b6c    000000c6     mmc.obj (.text:disk_readp)
+                  00009c32    000000c2     rts430.lib : fs_mpy.obj (.text)
+                  00009cf4    000000b8     mmc.obj (.text:send_cmd)
+                  00009dac    000000b6     pff.obj (.text:check_fs)
+                  00009e62    000000a8     mrfi.obj (.text:spiBurstFifoAccess)
+                  00009f0a    000000a6     pff.obj (.text:dir_rewind)
+                  00009fb0    000000a4     pff.obj (.text:dir_find)
+                  0000a054    0000009a     rts430.lib : fs_div.obj (.text)
+                  0000a0ee    00000098     main.obj (.text:getEffectiveness)
+                  0000a186    00000070     mrfi.obj (.text:MRFI_RxAddrIsFiltered)
+                  0000a1f6    00000070     main.obj (.text:main)
+                  0000a266    0000006c     parser.obj (.text:parseCommaData)
+                  0000a2d2    0000006c     radio.obj (.text:sendMsg)
+                  0000a33e    00000064     parser.obj (.text:parsedata)
+                  0000a3a2    00000060     pff.obj (.text:clust2sect)
+                  0000a402    00000060     radio.obj (.text:sendGraphicsUpdate)
+                  0000a462    0000005e     mrfi.obj (.text:spiRegAccess)
+                  0000a4c0    0000005c     rts430.lib : lsr32.obj (.text:l_lsr_const)
+                  0000a51c    0000005c     pff.obj (.text:mem_cmp)
+                  0000a578    0000005c     mrfi.obj (.text:mrfiSpiCmdStrobe)
+                  0000a5d4    00000058     rts430.lib : div32u.obj (.text)
+                  0000a62c    00000056                : _printfi_min.obj (.text:_ltostr)
+                  0000a682    00000054     mrfi.obj (.text:MRFI_WakeUp)
+                  0000a6d6    00000054     rts430.lib : atoi.obj (.text:atoi)
+                  0000a72a    0000004e                : _printfi_min.obj (.text:_pproc_diouxp)
+                  0000a778    0000004c     mrfi.obj (.text:Mrfi_CalculateRssi)
+                  0000a7c4    0000004c     rts430.lib : lsr16.obj (.text)
+                  0000a810    00000048                : autoinit.obj (.text:_auto_init)
+                  0000a858    00000048                : _printfi_min.obj (.text:_pproc_str)
+                  0000a8a0    00000046                : fs_tou.obj (.text)
+                  0000a8e6    00000044     pff.obj (.text:mem_set)
+                  0000a92a    00000042     mrfi.obj (.text:MRFI_SetRxAddrFilter)
+                  0000a96c    00000040     mrfi.obj (.text:Mrfi_DelayUsec)
+                  0000a9ac    0000003e     rts430.lib : lsl32.obj (.text:l_lsl_const)
+                  0000a9ea    0000003e     radio.obj (.text:sendAttack)
+                  0000aa28    0000003e     radio.obj (.text:sendID)
+                  0000aa66    00000038     rts430.lib : sprintf.obj (.text:sprintf)
+                  0000aa9e    00000036     mrfi.obj (.text:MRFI_SetRFPwr)
+                  0000aad4    00000034     mrfi.obj (.text:MRFI_SetLogicalChannel)
+                  0000ab08    00000034     mrfi.obj (.text:mrfiSpiInit)
+                  0000ab3c    00000032     rts430.lib : fs_ultof.obj (.text)
+                  0000ab6e    00000030     bsp.obj (.text:BSP_Init)
+                  0000ab9e    00000030     main.obj (.text:uart_puts)
+                  0000abce    0000002e     rts430.lib : _printfi_min.obj (.text:_getarg_diouxp)
+                  0000abfc    0000002e     usci_spi.obj (.text:spi_set_divisor)
+                  0000ac2a    0000002c     mrfi.obj (.text:Mrfi_RandomBackoffDelay)
+                  0000ac56    0000002c     mrfi.obj (.text:Mrfi_RxModeOff)
+                  0000ac82    0000002c     rts430.lib : div16s.obj (.text)
+                  0000acae    0000002c                : lsl16.obj (.text)
+                  0000acda    0000002a     radio.obj (.text:receiveInit)
+                  0000ad04    0000002a     usci_spi.obj (.text:spi_initialize)
+                  0000ad2e    00000028     bsp.obj (.text:BSP_Delay)
+                  0000ad56    00000028     mrfi.obj (.text:mrfiSpiWriteReg)
+                  0000ad7e    00000026     rts430.lib : boot.obj (.text:_c_int00_noexit)
+                  0000ada4    00000026     mrfi.obj (.text:mrfiSpiReadReg)
+                  0000adca    00000026     rts430.lib : mult32.obj (.text)
+                  0000adf0    00000026     radio.obj (.text:sendGameOver)
+                  0000ae16    00000024     rts430.lib : fs_utof.obj (.text)
+                  0000ae3a    00000020     mrfi.obj (.text:MRFI_EnableRxAddrFilter)
+                  0000ae5a    00000020     mrfi.obj (.text:MRFI_RxOn)
+                  0000ae7a    0000001e     usci_spi.obj (.text:spi_send)
+                  0000ae98    0000001c     bsp.obj (.text:BSP_InitBoard)
+                  0000aeb4    0000001c     mrfi.obj (.text:MRFI_GpioIsr)
+                  0000aed0    0000001c     rts430.lib : memccpy.obj (.text:memccpy)
+                  0000aeec    0000001a     mrfi.obj (.text:BSP_GpioPort1Isr)
+                  0000af06    0000001a     rts430.lib : sprintf.obj (.text:_outs)
+                  0000af20    0000001a     mrfi.obj (.text:mrfiSpiWriteTxFifo)
+                  0000af3a    00000018     rts430.lib : _printfi_min.obj (.text:_div)
+                  0000af52    00000018     mrfi.obj (.text:mrfiSpiReadRxFifo)
+                  0000af6a    00000016     mrfi.obj (.text:MRFI_RandomByte)
+                  0000af80    00000016     mrfi.obj (.text:MRFI_Receive)
+                  0000af96    00000016     mrfi.obj (.text:Mrfi_RxModeOn)
+                  0000afac    00000016     rts430.lib : div16u.obj (.text)
+                  0000afc2    00000016     usci_spi.obj (.text:spi_receive)
+                  0000afd8    00000014     rts430.lib : memset.obj (.text:memset)
+                  0000afec    00000014                : mult16.obj (.text)
+                  0000b000    00000014     main.obj (.text:uart_putc)
+                  0000b014    00000012     bsp.obj (.text:BSP_InitLeds)
+                  0000b026    00000012     rts430.lib : sprintf.obj (.text:_outc)
+                  0000b038    00000012                : memcpy.obj (.text:memcpy)
+                  0000b04a    00000010                : asr32.obj (.text:l_asr)
+                  0000b05a    00000010                : epilog.obj (.text)
+                  0000b06a    00000010                : strcpy.obj (.text:strcpy)
+                  0000b07a    0000000e                : strlen.obj (.text:strlen)
+                  0000b088    0000000a     bsp.obj (.text:BSP_InitButtons)
+                  0000b092    0000000a     bsp.obj (.text:BSP_InitDrivers)
+                  0000b09c    0000000a     bsp.obj (.text:_system_pre_init)
+                  0000b0a6    00000006     rts430.lib : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  0000b0ac    00000006                : fltud.obj (.text:_fltud)
+                  0000b0b2    00000004                : exit.obj (.text:abort)
+                  0000b0b6    00000002                : _lock.obj (.text:_nop)
+
+.const     0    0000b0b8    00000371     
+                  0000b0b8    00000144     main.obj (.const:typeMatrix)
+                  0000b1fc    00000101     rts430.lib : ctype.obj (.const:.string:_ctypes_)
+                  0000b2fd    00000001     --HOLE-- [fill = 0]
+                  0000b2fe    000000a2     main.obj (.const:.string)
+                  0000b3a0    0000003c     mrfi.obj (.const:mrfiRadioCfg)
+                  0000b3dc    00000014     parser.obj (.const:.string)
+                  0000b3f0    00000014     rts430.lib : _printfi_min.obj (.const:.string)
+                  0000b404    00000009     radio.obj (.const:.string:$P$T2$3)
+                  0000b40d    00000001     --HOLE-- [fill = 0]
+                  0000b40e    00000006     radio.obj (.const:.string:$P$T0$1)
+                  0000b414    00000006     radio.obj (.const:.string:$P$T1$2)
+                  0000b41a    00000004     radio.obj (.const:.string:$P$T3$4)
+                  0000b41e    00000004     mrfi.obj (.const:.string:mrfiBroadcastAddr)
+                  0000b422    00000004     mrfi.obj (.const:.string:mrfiLogicalChanTable)
+                  0000b426    00000003     mrfi.obj (.const:.string:mrfiRFPowerTable)
+
+.cinit     0    0000b42a    00000042     
+                  0000b42a    0000002f     mrfi.obj (.cinit)
+                  0000b459    00000001     --HOLE-- [fill = 0]
+                  0000b45a    00000010     main.obj (.cinit)
+                  0000b46a    00000002     --HOLE-- [fill = 0]
+
+.int00     0    0000ffe0    00000002     
+                  0000ffe0    00000002     rts430.lib : int00.obj (.int00)
+
+.int01     0    0000ffe2    00000002     
+                  0000ffe2    00000002     rts430.lib : int01.obj (.int01)
+
+.int02     0    0000ffe4    00000002     
+                  0000ffe4    00000002     rts430.lib : int02.obj (.int02)
+
+.int03     0    0000ffe6    00000002     
+                  0000ffe6    00000002     mrfi.obj (.int03)
+
+.int04     0    0000ffe8    00000002     
+                  0000ffe8    00000002     rts430.lib : int04.obj (.int04)
+
+.int05     0    0000ffea    00000002     
+                  0000ffea    00000002     rts430.lib : int05.obj (.int05)
+
+.int06     0    0000ffec    00000002     
+                  0000ffec    00000002     rts430.lib : int06.obj (.int06)
+
+.int07     0    0000ffee    00000002     
+                  0000ffee    00000002     rts430.lib : int07.obj (.int07)
+
+.int08     0    0000fff0    00000002     
+                  0000fff0    00000002     rts430.lib : int08.obj (.int08)
+
+.int09     0    0000fff2    00000002     
+                  0000fff2    00000002     rts430.lib : int09.obj (.int09)
+
+.int10     0    0000fff4    00000002     
+                  0000fff4    00000002     rts430.lib : int10.obj (.int10)
+
+.int11     0    0000fff6    00000002     
+                  0000fff6    00000002     rts430.lib : int11.obj (.int11)
+
+.int12     0    0000fff8    00000002     
+                  0000fff8    00000002     rts430.lib : int12.obj (.int12)
+
+.int13     0    0000fffa    00000002     
+                  0000fffa    00000002     rts430.lib : int13.obj (.int13)
+
+.int14     0    0000fffc    00000002     
+                  0000fffc    00000002     rts430.lib : int14.obj (.int14)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000200   .bss
+00008000   .text
+0000004a   ADC10AE0
+0000004b   ADC10AE1
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000ad2e   BSP_Delay
+0000aeec   BSP_GpioPort1Isr
+0000ab6e   BSP_Init
+0000ae98   BSP_InitBoard
+0000b088   BSP_InitButtons
+0000b092   BSP_InitDrivers
+0000b014   BSP_InitLeds
+0000b0b2   C$$EXIT
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+0000acae   I_LSL
+0000acd6   I_LSL_1
+0000acc4   I_LSL_10
+0000acc2   I_LSL_11
+0000acc0   I_LSL_12
+0000acbe   I_LSL_13
+0000acbc   I_LSL_14
+0000acba   I_LSL_15
+0000acd4   I_LSL_2
+0000acd2   I_LSL_3
+0000acd0   I_LSL_4
+0000acce   I_LSL_5
+0000accc   I_LSL_6
+0000acca   I_LSL_7
+0000acc8   I_LSL_8
+0000acc6   I_LSL_9
+0000a7c4   I_LSR
+0000a80a   I_LSR_1
+0000a7e6   I_LSR_10
+0000a7e2   I_LSR_11
+0000a7de   I_LSR_12
+0000a7da   I_LSR_13
+0000a7d6   I_LSR_14
+0000a7d2   I_LSR_15
+0000a806   I_LSR_2
+0000a802   I_LSR_3
+0000a7fe   I_LSR_4
+0000a7fa   I_LSR_5
+0000a7f6   I_LSR_6
+0000a7f2   I_LSR_7
+0000a7ee   I_LSR_8
+0000a7ea   I_LSR_9
+0000b04a   L_ASR
+0000a9e4   L_LSL_1
+0000a9c0   L_LSL_10
+0000a9bc   L_LSL_11
+0000a9b8   L_LSL_12
+0000a9b4   L_LSL_13
+0000a9b0   L_LSL_14
+0000a9ac   L_LSL_15
+0000a9e0   L_LSL_2
+0000a9dc   L_LSL_3
+0000a9d8   L_LSL_4
+0000a9d4   L_LSL_5
+0000a9d0   L_LSL_6
+0000a9cc   L_LSL_7
+0000a9c8   L_LSL_8
+0000a9c4   L_LSL_9
+0000a514   L_LSR_1
+0000a4de   L_LSR_10
+0000a4d8   L_LSR_11
+0000a4d2   L_LSR_12
+0000a4cc   L_LSR_13
+0000a4c6   L_LSR_14
+0000a4c0   L_LSR_15
+0000a50e   L_LSR_2
+0000a508   L_LSR_3
+0000a502   L_LSR_4
+0000a4fc   L_LSR_5
+0000a4f6   L_LSR_6
+0000a4f0   L_LSR_7
+0000a4ea   L_LSR_8
+0000a4e4   L_LSR_9
+0000ae3a   MRFI_EnableRxAddrFilter
+0000aeb4   MRFI_GpioIsr
+00008834   MRFI_Init
+0000af6a   MRFI_RandomByte
+0000af80   MRFI_Receive
+0000a186   MRFI_RxAddrIsFiltered
+00009004   MRFI_RxCompleteISR
+0000ae5a   MRFI_RxOn
+0000aad4   MRFI_SetLogicalChannel
+0000aa9e   MRFI_SetRFPwr
+0000a92a   MRFI_SetRxAddrFilter
+00009130   MRFI_Transmit
+0000a682   MRFI_WakeUp
+000000c0   OA0CTL0
+000000c1   OA0CTL1
+000000c2   OA1CTL0
+000000c3   OA1CTL1
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+0000001e   P4DIR
+0000001c   P4IN
+0000001d   P4OUT
+00000011   P4REN
+0000001f   P4SEL
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000160   TACTL
+0000012e   TAIV
+00000170   TAR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000180   TBCTL
+0000011e   TBIV
+00000190   TBR
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+00000120   WDTCTL
+00000600   __STACK_END
+00000050   __STACK_SIZE
+0000b0a6   __TI_ISR_TRAP
+00000001   __TI_args_main
+00000001   __TI_auto_init
+0000029c   __TI_cleanup_ptr
+0000029e   __TI_dtors_ptr
+00000001   __TI_exit
+0000ffe0   __TI_int00
+0000ffe2   __TI_int01
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffe8   __TI_int04
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff6   __TI_int11
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+00009aa2   __TI_printfi_minimal
+ffffffff   __binit__
+00000200   __bss__
+ffffffff   __c_args__
+0000b42a   __cinit__
+0000ac82   __divi
+0000afac   __divu
+0000a5d4   __divul
+000002a3   __end__
+0000b0b8   __etext__
+00008eda   __fs_add
+0000a054   __fs_div
+00009c32   __fs_mpy
+00008ed4   __fs_sub
+0000a8a0   __fs_tou
+0000ab3c   __fs_ultof
+0000ae16   __fs_utof
+0000afec   __mpyi
+0000adca   __mpyl
+ffffffff   __pinit__
+0000ac82   __remi
+0000afac   __remu
+0000a5d4   __remul
+00008000   __text__
+0000a810   _auto_init
+0000ad7e   _c_int00
+0000ad7e   _c_int00_noexit
+0000b1fc   _ctypes_
+0000b0ac   _fltud
+00000298   _lock
+0000b0b6   _nop
+0000fffe   _reset_vector
+000005b0   _stack
+0000b09c   _system_pre_init
+0000029a   _unlock
+0000b0b2   abort
+0000a6d6   atoi
+00000214   attacks
+ffffffff   binit
+00009362   calculateDamage
+0000b42a   cinit
+00000290   dest
+00008bee   disk_initialize
+00009b6c   disk_readp
+000002a3   end
+0000b0b8   etext
+0000026c   flagReg
+0000b066   func_epilog_1
+0000b064   func_epilog_2
+0000b062   func_epilog_3
+0000b060   func_epilog_4
+0000b05e   func_epilog_5
+0000b05c   func_epilog_6
+0000b05a   func_epilog_7
+0000a0ee   getEffectiveness
+00009548   get_attacks
+000085a0   get_pokemon_data
+00008300   get_pokemon_team
+0000a1f6   main
+0000aed0   memccpy
+0000b038   memcpy
+0000afd8   memset
+0000b41e   mrfiBroadcastAddr
+0000a578   mrfiSpiCmdStrobe
+0000ab08   mrfiSpiInit
+0000ada4   mrfiSpiReadReg
+0000af52   mrfiSpiReadRxFifo
+0000ad56   mrfiSpiWriteReg
+0000af20   mrfiSpiWriteTxFifo
+00000200   name
+00000274   opp_pkmn
+0000a266   parseCommaData
+0000a33e   parsedata
+00008000   pf_mount
+000099d4   pf_open
+00008a32   pf_read
+ffffffff   pinit
+00000284   pkmn1
+00008d86   process_game
+0000acda   receiveInit
+0000026e   received_attack
+0000a9ea   sendAttack
+0000adf0   sendGameOver
+0000a402   sendGraphicsUpdate
+0000aa28   sendID
+0000a2d2   sendMsg
+00000294   source
+0000ad04   spi_initialize
+0000afc2   spi_receive
+0000ae7a   spi_send
+0000abfc   spi_set_divisor
+0000aa66   sprintf
+0000023c   start_pos
+0000b06a   strcpy
+0000b07a   strlen
+0000b0b8   typeMatrix
+0000b000   uart_putc
+0000ab9e   uart_puts
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000011   P4REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+0000001c   P4IN
+0000001d   P4OUT
+0000001e   P4DIR
+0000001f   P4SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+0000004b   ADC10AE1
+00000050   __STACK_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+000000c0   OA0CTL0
+000000c1   OA0CTL1
+000000c2   OA1CTL0
+000000c3   OA1CTL1
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TBIV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TAIV
+00000160   TACTL
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000170   TAR
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000180   TBCTL
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000190   TBR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   .bss
+00000200   __bss__
+00000200   name
+00000214   attacks
+0000023c   start_pos
+0000026c   flagReg
+0000026e   received_attack
+00000274   opp_pkmn
+00000284   pkmn1
+00000290   dest
+00000294   source
+00000298   _lock
+0000029a   _unlock
+0000029c   __TI_cleanup_ptr
+0000029e   __TI_dtors_ptr
+000002a3   __end__
+000002a3   end
+000005b0   _stack
+00000600   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+00008000   .text
+00008000   __text__
+00008000   pf_mount
+00008300   get_pokemon_team
+000085a0   get_pokemon_data
+00008834   MRFI_Init
+00008a32   pf_read
+00008bee   disk_initialize
+00008d86   process_game
+00008ed4   __fs_sub
+00008eda   __fs_add
+00009004   MRFI_RxCompleteISR
+00009130   MRFI_Transmit
+00009362   calculateDamage
+00009548   get_attacks
+000099d4   pf_open
+00009aa2   __TI_printfi_minimal
+00009b6c   disk_readp
+00009c32   __fs_mpy
+0000a054   __fs_div
+0000a0ee   getEffectiveness
+0000a186   MRFI_RxAddrIsFiltered
+0000a1f6   main
+0000a266   parseCommaData
+0000a2d2   sendMsg
+0000a33e   parsedata
+0000a402   sendGraphicsUpdate
+0000a4c0   L_LSR_15
+0000a4c6   L_LSR_14
+0000a4cc   L_LSR_13
+0000a4d2   L_LSR_12
+0000a4d8   L_LSR_11
+0000a4de   L_LSR_10
+0000a4e4   L_LSR_9
+0000a4ea   L_LSR_8
+0000a4f0   L_LSR_7
+0000a4f6   L_LSR_6
+0000a4fc   L_LSR_5
+0000a502   L_LSR_4
+0000a508   L_LSR_3
+0000a50e   L_LSR_2
+0000a514   L_LSR_1
+0000a578   mrfiSpiCmdStrobe
+0000a5d4   __divul
+0000a5d4   __remul
+0000a682   MRFI_WakeUp
+0000a6d6   atoi
+0000a7c4   I_LSR
+0000a7d2   I_LSR_15
+0000a7d6   I_LSR_14
+0000a7da   I_LSR_13
+0000a7de   I_LSR_12
+0000a7e2   I_LSR_11
+0000a7e6   I_LSR_10
+0000a7ea   I_LSR_9
+0000a7ee   I_LSR_8
+0000a7f2   I_LSR_7
+0000a7f6   I_LSR_6
+0000a7fa   I_LSR_5
+0000a7fe   I_LSR_4
+0000a802   I_LSR_3
+0000a806   I_LSR_2
+0000a80a   I_LSR_1
+0000a810   _auto_init
+0000a8a0   __fs_tou
+0000a92a   MRFI_SetRxAddrFilter
+0000a9ac   L_LSL_15
+0000a9b0   L_LSL_14
+0000a9b4   L_LSL_13
+0000a9b8   L_LSL_12
+0000a9bc   L_LSL_11
+0000a9c0   L_LSL_10
+0000a9c4   L_LSL_9
+0000a9c8   L_LSL_8
+0000a9cc   L_LSL_7
+0000a9d0   L_LSL_6
+0000a9d4   L_LSL_5
+0000a9d8   L_LSL_4
+0000a9dc   L_LSL_3
+0000a9e0   L_LSL_2
+0000a9e4   L_LSL_1
+0000a9ea   sendAttack
+0000aa28   sendID
+0000aa66   sprintf
+0000aa9e   MRFI_SetRFPwr
+0000aad4   MRFI_SetLogicalChannel
+0000ab08   mrfiSpiInit
+0000ab3c   __fs_ultof
+0000ab6e   BSP_Init
+0000ab9e   uart_puts
+0000abfc   spi_set_divisor
+0000ac82   __divi
+0000ac82   __remi
+0000acae   I_LSL
+0000acba   I_LSL_15
+0000acbc   I_LSL_14
+0000acbe   I_LSL_13
+0000acc0   I_LSL_12
+0000acc2   I_LSL_11
+0000acc4   I_LSL_10
+0000acc6   I_LSL_9
+0000acc8   I_LSL_8
+0000acca   I_LSL_7
+0000accc   I_LSL_6
+0000acce   I_LSL_5
+0000acd0   I_LSL_4
+0000acd2   I_LSL_3
+0000acd4   I_LSL_2
+0000acd6   I_LSL_1
+0000acda   receiveInit
+0000ad04   spi_initialize
+0000ad2e   BSP_Delay
+0000ad56   mrfiSpiWriteReg
+0000ad7e   _c_int00
+0000ad7e   _c_int00_noexit
+0000ada4   mrfiSpiReadReg
+0000adca   __mpyl
+0000adf0   sendGameOver
+0000ae16   __fs_utof
+0000ae3a   MRFI_EnableRxAddrFilter
+0000ae5a   MRFI_RxOn
+0000ae7a   spi_send
+0000ae98   BSP_InitBoard
+0000aeb4   MRFI_GpioIsr
+0000aed0   memccpy
+0000aeec   BSP_GpioPort1Isr
+0000af20   mrfiSpiWriteTxFifo
+0000af52   mrfiSpiReadRxFifo
+0000af6a   MRFI_RandomByte
+0000af80   MRFI_Receive
+0000afac   __divu
+0000afac   __remu
+0000afc2   spi_receive
+0000afd8   memset
+0000afec   __mpyi
+0000b000   uart_putc
+0000b014   BSP_InitLeds
+0000b038   memcpy
+0000b04a   L_ASR
+0000b05a   func_epilog_7
+0000b05c   func_epilog_6
+0000b05e   func_epilog_5
+0000b060   func_epilog_4
+0000b062   func_epilog_3
+0000b064   func_epilog_2
+0000b066   func_epilog_1
+0000b06a   strcpy
+0000b07a   strlen
+0000b088   BSP_InitButtons
+0000b092   BSP_InitDrivers
+0000b09c   _system_pre_init
+0000b0a6   __TI_ISR_TRAP
+0000b0ac   _fltud
+0000b0b2   C$$EXIT
+0000b0b2   abort
+0000b0b6   _nop
+0000b0b8   __etext__
+0000b0b8   etext
+0000b0b8   typeMatrix
+0000b1fc   _ctypes_
+0000b41e   mrfiBroadcastAddr
+0000b42a   __cinit__
+0000b42a   cinit
+0000ffe0   __TI_int00
+0000ffe2   __TI_int01
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffe8   __TI_int04
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff6   __TI_int11
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[304 symbols]
